@@ -1,10 +1,13 @@
 package org.apache.beam.examples;
 
 import org.apache.beam.examples.options.EmployeeOptions;
+import org.apache.beam.examples.transforms.EmpToStringTransformFunction;
+import org.apache.beam.examples.transforms.ToEmpTransformFunction;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptions;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
+import org.apache.beam.sdk.transforms.ParDo;
 
 public class EmployeeBeamer {
 
@@ -18,15 +21,16 @@ public class EmployeeBeamer {
 		
 		// Create the Custom Options and then the pipeline
 		EmployeeOptions sOptions = PipelineOptionsFactory.fromArgs( args ).as( EmployeeOptions.class );
-		Pipeline p = Pipeline.create(sOptions);
+		Pipeline p = Pipeline.create( sOptions );
+
 		
-		System.out.println("*************** input and output file "+sOptions.getInput()+" and "+sOptions.getOutput());
-		
-		// Read a file and write it again
+		// Read a file and write it again 
 		p.apply( TextIO.read().from( sOptions.getInput() ) )
+		 .apply( ParDo.of( new ToEmpTransformFunction()) )
+		 .apply( ParDo.of( new EmpToStringTransformFunction() ) )
 		 .apply( TextIO.write().to( sOptions.getOutput() ) );
 		
 		p.run();
-
+		
 	}
 }
