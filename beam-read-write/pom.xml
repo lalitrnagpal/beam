@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>beam-transforms</artifactId>
+  <artifactId>beam-read-write</artifactId>
   <version>0.1</version>
 
   <packaging>jar</packaging>
