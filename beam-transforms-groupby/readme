@@ -1,0 +1,7 @@
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeGroupByBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeGroupTwoFieldsBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeGroupingAndCountingBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
