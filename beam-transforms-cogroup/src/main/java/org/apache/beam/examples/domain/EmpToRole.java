@@ -11,16 +11,21 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department implements Serializable {
+public class EmpToRole implements Serializable {
 
-	private String id;
-	private String name;
-
+	private String empId;
+	private String roleId;
+	
 	public void create(String line) {
 		  int i = 0;
 		  String[] values = line.split(",");
-		  this.id = values[0];
-		  this.name = values[1];
+		  this.empId = values[0];
+		  this.roleId = values[1];
 	}
-		
+
+	@Override
+	public String toString() {
+		return empId + ", " + roleId;
+	}
+			
 }
