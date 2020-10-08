@@ -39,6 +39,7 @@ public class Employee implements Serializable {
 	private String doj_week_short;
 	private String age_in_company;
 	private String salary;
+	private String deptId;
 	
 	private String fullname;
 	
@@ -52,7 +53,7 @@ public class Employee implements Serializable {
 		return empid + ", " + prefix + ", " + first + ", " + middle + ", " + last + ", " + gender + ", " + mail + ", " + father + ", " + ", " 
 							+ mother + ", " + maiden + ", " + dob +", "+ tob + ", " + age + ", " + doj + ", " + qoj + ", " 
 							+ hoj + ", " + yoj + ", " + moj + ", " + moj_name + ", " + moj_name_short + ", " + doj_day + ", "+ doj_week + ", " 
-							+ ", "+ doj_week_short + ", " + age_in_company + ", " + salary;  
+							+ ", "+ doj_week_short + ", " + age_in_company + ", " + salary + ", " + deptId;  
 	}
 
 	public Employee create(String line) {
@@ -84,6 +85,7 @@ public class Employee implements Serializable {
 			  this.setDoj_week_short( values[22] );
 			  this.setAge_in_company( values[23] );
 			  this.setSalary( values[24] );
+			  this.setDeptId( values[25] );
 		  
 			  this.setFullname( this.getPrefix() + " " + this.getLast().toUpperCase() + " " + this.getMiddle() + " " + this.getFirst());
 		  } catch (Exception e) {

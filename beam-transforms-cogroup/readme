@@ -1,1 +1,6 @@
-mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeCoGroupOneToManyBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+# employee-department
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeDepartmentBeamer -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+
+# employee-employeetodepartment-department
+mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.EmployeeDepartmentBeamerTwo -D exec.args="--input=emp-data.csv --output=emp-data-out.csv" -P direct-runner
+

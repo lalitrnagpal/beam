@@ -23,7 +23,7 @@ import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.TupleTag;
 
-public class EmployeeCoGroupOneToManyBeamer {
+public class EmployeeDepartmentBeamerTwo {
 
 	
 	public static void main(String[] args) {
